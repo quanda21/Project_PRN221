@@ -1,0 +1,41 @@
+﻿@page
+@model HE153620_Store.Pages.Admin.Product.CreateModel
+@{
+    ViewData["Title"] = "Add New Product";
+}
+
+<h1>Add New Product</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="ProductName">Product Name:</label>
+        <input type="text" id="ProductName" name="ProductName" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="SupplierId">Supplier:</label>
+        <select id="SupplierId" name="SupplierId" class="form-control" required>
+            @foreach (var supplier in Model.Suppliers)
+            {
+                <option value="@supplier.SupplierId">@supplier.Name</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="CategoryId">Category:</label>
+        <select id="CategoryId" name="CategoryId" class="form-control" required>
+            @foreach (var category in Model.Categories)
+            {
+                <option value="@category.CategoryId">@category.CategoryName</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="UnitPrice">Unit Price:</label>
+        <input type="number" id="UnitPrice" name="UnitPrice" class="form-control" step="0.01" required>
+    </div>
+    <div class="form-group">
+        <label for="UnitsInStock">Units In Stock:</label>
+        <input type="number" id="UnitsInStock" name="UnitsInStock" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
