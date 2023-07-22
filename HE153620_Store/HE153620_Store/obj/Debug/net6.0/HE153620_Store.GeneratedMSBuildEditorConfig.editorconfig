@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\GITDESKTOP\PRN221_Store\HE153620_Store\HE153620_Store
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/GITDESKTOP/PRN221_Store/HE153620_Store/HE153620_Store/Pages/Admin/Product/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdFxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GITDESKTOP/PRN221_Store/HE153620_Store/HE153620_Store/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,42 @@
+﻿@page
+@model HE153620_Store.Pages.Admin.Product.ListModel
+@{
+    ViewData["Title"] = "Product List ";
+}
+
+<h1>Product List</h1>
+
+<p>
+    <a asp-page="Create">Add New Product</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Supplier</th>
+            <th>Category</th>
+            <th>Unit Price</th>
+            <th>Units In Stock</th>
+            <th></th>
+        </tr>
+ </thead>
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@product.ProductID</td>
+                <td>@product.ProductName</td>
+                <td>@product.Supplier.Name</td>
+                <td>@product.Category.CategoryName</td>
+                <td>@product.UnitPrice.ToString("C")</td>
+                <td>@product.UnitsInStock</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@product.ProductID">Edit</a> 
+                    <a asp-page="Delete" asp-route-id="@product.ProductID">Delete</a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
