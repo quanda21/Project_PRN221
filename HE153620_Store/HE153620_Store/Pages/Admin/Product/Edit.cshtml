@@ -9,6 +9,7 @@
 <div class="row">
     <div class="col-md-4">
         <form method="post">
+            <input type="hidden" asp-for="Product.ProductId" />
             <div class="form-group">
                 <label asp-for="Product.ProductName" class="control-label"></label>
                 <input asp-for="Product.ProductName" class="form-control" />

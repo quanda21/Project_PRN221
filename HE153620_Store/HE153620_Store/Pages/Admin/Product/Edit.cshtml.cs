@@ -44,6 +44,10 @@ namespace HE153620_Store.Pages.Admin.Product
         {
             if (!ModelState.IsValid)
             {
+                Suppliers = new SelectList(_dbContext.Suppliers, "SupplierId", "Name");
+                Categories = new SelectList(_dbContext.Categories, "CategoryId", "CategoryName");
+
+             
                 return Page();
             }
 
