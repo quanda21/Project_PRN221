@@ -38,9 +38,9 @@ namespace HE153620_Store.Pages.Admin.Product
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int id)
         {
-            var product = await _dbContext.Products.FindAsync(Product.ProductId);
+            var product = await _dbContext.Products.FindAsync(id);
             if (product != null)
             {
                 _dbContext.Products.Remove(product);

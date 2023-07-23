@@ -1,0 +1,43 @@
+﻿@page
+@model HE153620_Store.Pages.Admin.Employee.EditModel
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<h1>Edit Employee</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Employee.EmployeeId" />
+
+    <div class="form-group">
+        <label asp-for="Employee.FirstName">First Name:</label>
+        <input asp-for="Employee.FirstName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Employee.LastName">Last Name:</label>
+        <input asp-for="Employee.LastName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Employee.Gender">Gender:</label>
+        <input asp-for="Employee.Gender" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Employee.Address">Address:</label>
+        <input asp-for="Employee.Address" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Employee.Phone">Phone:</label>
+        <input asp-for="Employee.Phone" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Employee.Email">Email:</label>
+        <input asp-for="Employee.Email" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

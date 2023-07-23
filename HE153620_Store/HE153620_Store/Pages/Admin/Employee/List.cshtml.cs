@@ -9,12 +9,16 @@ namespace HE153620_Store.Pages.Admin.Employee
     {
         private readonly StoreManagerContext _dbContext;
 
+
+
         public ListModel(StoreManagerContext dbContext)
         {
             _dbContext = dbContext;
         }
 
         public IList<Models.Employee> Employees { get; set; }
+       
+        public Models.Employee Employee{ get; set; }
 
         public async Task<IActionResult> OnGet()
         {
