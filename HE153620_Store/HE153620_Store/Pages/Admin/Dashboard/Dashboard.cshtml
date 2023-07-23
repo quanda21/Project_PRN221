@@ -1,0 +1,35 @@
+﻿@*@page
+@model HE153620_Store.Pages.Admin.Dashboard.DashboardModel
+
+@{
+    ViewData["Title"] = "Sales Summary";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Total Amount Sold in Current Month</h3>
+<p>@Model.TotalAmountSold.ToString("C")</p>
+
+<h3>Most Sold Product</h3>
+@if (Model.MostSoldProduct != null)
+{
+    <p>Product ID: @Model.MostSoldProduct.ProductId</p>
+    <p>Product Name: @Model.MostSoldProduct.ProductName</p>
+    <p>Total Quantity Sold: @Model.MostSoldProduct.OrderDetails.Sum(od => od.Quantity)</p>
+}
+else
+{
+    <p>No sales data available.</p>
+}
+
+<h3>Top Sales Employee</h3>
+@if (Model.TopSalesEmployee != null)
+{
+    <p>Employee ID: @Model.TopSalesEmployee.EmployeeId</p>
+    <p>Employee Name: @Model.TopSalesEmployee.FirstName @Model.TopSalesEmployee.LastName</p>
+    <p>Total Sales Amount: @Model.TopSalesEmployee.Invoices.Sum(i => i.TotalAmount).ToString()</p>
+}
+else
+{
+    <p>No sales data available.</p>
+}*@

@@ -17,7 +17,7 @@
             <th>Phone</th>
             <th>Email</th>
             <th>Order Date</th>
-            <th>Total Amount</th>
+           @* <th>Total Amount</th>*@
         </tr>
     </thead>
     <tbody>
@@ -33,8 +33,8 @@
                         <td>@customer.Address</td>
                         <td>@customer.Phone</td>
                         <td>@customer.Email</td>
-                       @* <td>@order.Invoice.InvoiceDate.ToString("yyyy-MM-dd")</td>
-                        <td>@order.Invoice.TotalAmount.ToString("N0") VND</td>*@
+                        <td>@order.OrderDate.ToString()</td>
+                    @*  <td>@order.Invoice.TotalAmount.ToString("N0") VND</td>*@
                     </tr>
                 }
             }

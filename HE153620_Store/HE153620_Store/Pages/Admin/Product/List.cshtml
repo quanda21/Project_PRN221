@@ -10,6 +10,16 @@
     <a asp-page="Create">Add New Product</a>
 </p>
 
+<form method="get">
+    <div class="form-group">
+        <label for="searchTerm">Search:</label>
+        <input type="text" class="form-control" id="searchTerm" name="searchTerm" placeholder="Enter product name or category...">
+        <button type="submit" class="btn btn-primary">Search</button>
+        <a asp-page="List" class="btn btn-secondary">Clear</a>
+    </div>
+</form>
+
+
 <table class="table">
     <thead>
         <tr>

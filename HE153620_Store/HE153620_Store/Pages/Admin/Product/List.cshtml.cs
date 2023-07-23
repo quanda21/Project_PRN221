@@ -20,11 +20,23 @@ namespace HE153620_Store.Pages.Admin.Product
 
             public List<Category> Categories { get; set; }
 
-            public void OnGet()
+        public void OnGet(string searchTerm)
+        {
+            Suppliers = _dbContext.Suppliers.ToList();
+            Categories = _dbContext.Categories.ToList();
+
+            if (!string.IsNullOrWhiteSpace(searchTerm))
             {
-               Suppliers=_dbContext.Suppliers.ToList();
-                Products = _dbContext.Products.ToList();
-            Categories = _dbContext.Categories.ToList();    
+                searchTerm = searchTerm.Trim().ToLower();
+                Products = _dbContext.Products
+                    .Where(p => p.ProductName.ToLower().Contains(searchTerm) || p.Category.CategoryName.ToLower().Contains(searchTerm))
+                    .ToList();
             }
+            else
+            {
+                Products = _dbContext.Products.ToList();
+            }
+        }
     }
 }
+
