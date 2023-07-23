@@ -17,7 +17,7 @@ namespace HE153620_Store.Pages.Admin.Product
         [BindProperty]
 
         public List<Supplier> Suppliers { get; set; }
-        public List<Category> Categories { get; set; }
+      
 
         public List<Models.Product> Products { get; set; }
         public Models.Product Product { get; set; }

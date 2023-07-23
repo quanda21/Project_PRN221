@@ -18,7 +18,7 @@ namespace HE153620_Store.Pages.Admin.Product
 
             public List<Supplier> Suppliers { get; set; }
 
-            public List<Category> Categories { get; set; }
+            public List<Models.Category> Categories { get; set; } 
 
         public void OnGet(string searchTerm)
         {
