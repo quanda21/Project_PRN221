@@ -1,0 +1,44 @@
+﻿@page
+@model HE153620_Store.Pages.Admin.Customer.ListModel
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<h1>Customers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Order Date</th>
+            <th>Total Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            @foreach (var order in customer.Orders)
+            {
+                    <tr>
+                        <td>@customer.CustomerId</td>
+                        <td>@customer.FirstName</td>
+                        <td>@customer.LastName</td>
+                        <td>@customer.Gender</td>
+                        <td>@customer.Address</td>
+                        <td>@customer.Phone</td>
+                        <td>@customer.Email</td>
+                       @* <td>@order.Invoice.InvoiceDate.ToString("yyyy-MM-dd")</td>
+                        <td>@order.Invoice.TotalAmount.ToString("N0") VND</td>*@
+                    </tr>
+                }
+            }
+        }
+
+    </tbody>
+</table>
