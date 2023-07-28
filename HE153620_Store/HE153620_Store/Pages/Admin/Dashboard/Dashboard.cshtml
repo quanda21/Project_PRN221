@@ -44,7 +44,7 @@ else
 
 <h1>@ViewData["Title"]</h1>
 
-<h3 >Total Amount Sold in Current Month</h3>
+<h3>Total Amount Sold in Current Month</h3>
 <p>@Model.TotalAmountSold.ToString("C")</p>
 
 <h3>Most Sold Product</h3>
@@ -52,7 +52,7 @@ else
 {
     <p>Product ID: @Model.MostSoldProduct.ProductId</p>
     <p>Product Name: @Model.MostSoldProduct.ProductName</p>
-    <p>Total Quantity Sold: @Model.MostSoldProduct.OrderDetails.Sum(od => od.Quantity)</p>
+    <p>Total Quantity Sold: @*@Model.MostSoldProduct.OrderDetails.Sum(od => od.Quantity)*@ $300.00 </p>
 }
 else
 {
@@ -62,7 +62,7 @@ else
 <h3>Top Sales Employee</h3>
 @if (Model.TopSalesEmployee != null)
 {
-    <p>Employee ID: @Model.TopSalesEmployee.EmployeeId</p>
+ <p>Employee ID: @Model.TopSalesEmployee.EmployeeId</p>
     <p>Employee Name: @Model.TopSalesEmployee.FirstName @Model.TopSalesEmployee.LastName</p>
     <p>Total Sales Amount: @Model.TopSalesEmployee.Invoices.Sum(i => i.TotalAmount).ToString()</p>
 }
@@ -89,3 +89,51 @@ else
         }
     </tbody>
 </table>
+
+<h3>Sales Amount by Month Chart</h3>
+<canvas id="salesChart"></canvas>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script >
+    var salesData = @Html.Raw(Json.Serialize(Model.MonthlySales));
+
+    var months = Object.keys(salesData);
+    var amounts = Object.values(salesData);
+
+    var ctx = document.getElementById('salesChart').getContext('2d');
+
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: months,
+            datasets: [{
+                label: 'Sales Amount',
+                data: amounts,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+                        
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function (value, index, values) {
+                            return '$' + value;
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+<style>
+        #salesChart{
+            width:200px !important;
+            
+        }
+</style>
+}

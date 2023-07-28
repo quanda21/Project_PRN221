@@ -28,11 +28,31 @@
                 <td>@category.Description</td>
                 <td>
                     <a asp-page="Edit" asp-route-id="@category.CategoryId">Edit</a> |
-                    <form method="post" asp-page-handler="Delete" asp-route-id="@category.CategoryId" onsubmit="return confirm('Are you sure you want to delete this employee?');">
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+
+                            <button onclick="onDelete(@category.CategoryId)">Delete</button>
+                           <a href="javascript:void(0)" onclick="onDelete(@category.CategoryId)">Delete</a>
+                    
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+
+<script>
+    var connection = new signalR.HubConnectionBuilder().withUrl("/categoryHub").build();
+    connection.start();
+
+    function onDelete(id) {
+        connection.invoke("DeleteCategory", id
+        );
+    }
+
+    // phản hồi
+    connection.on("CategoryDeleted ", (id) => {
+        const element = document.getElementById(id);
+        element.remove();
+    });
+</script>

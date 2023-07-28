@@ -1,3 +1,4 @@
+using HE153620_Store.Hubs;
 using HE153620_Store.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,6 +28,8 @@ app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapHub<CategoryHub>("/categoryHub");
 
 app.MapRazorPages();
 

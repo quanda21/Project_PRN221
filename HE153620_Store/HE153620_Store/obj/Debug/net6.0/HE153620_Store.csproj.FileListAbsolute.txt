@@ -61,3 +61,4 @@ D:\GITDESKTOP\PRN221_Store\HE153620_Store\HE153620_Store\obj\Debug\net6.0\refint
 D:\GITDESKTOP\PRN221_Store\HE153620_Store\HE153620_Store\obj\Debug\net6.0\HE153620_Store.pdb
 D:\GITDESKTOP\PRN221_Store\HE153620_Store\HE153620_Store\obj\Debug\net6.0\HE153620_Store.genruntimeconfig.cache
 D:\GITDESKTOP\PRN221_Store\HE153620_Store\HE153620_Store\obj\Debug\net6.0\ref\HE153620_Store.dll
+D:\GITDESKTOP\PRN221_Store\HE153620_Store\HE153620_Store\bin\Debug\net6.0\libman.json

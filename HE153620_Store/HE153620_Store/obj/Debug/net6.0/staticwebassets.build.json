@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t8vtRE8sNzM08GlWP69s1wqxg10galaj/NgkvwnZBns=",
+  "Hash": "3vL8u92n4aNkiJe2z2H5BaH8Gu9ue/MZOW82RwOSgms=",
   "Source": "HE153620_Store",
   "BasePath": "_content/HE153620_Store",
   "Mode": "Default",
@@ -1069,6 +1069,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\GITDESKTOP\\PRN221_Store\\HE153620_Store\\HE153620_Store\\wwwroot\\microsoft\\signalr\\dist\\browser\\signalr.js",
+      "SourceId": "HE153620_Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GITDESKTOP\\PRN221_Store\\HE153620_Store\\HE153620_Store\\wwwroot\\",
+      "BasePath": "_content/HE153620_Store",
+      "RelativePath": "microsoft/signalr/dist/browser/signalr.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\microsoft\\signalr\\dist\\browser\\signalr.js"
+    },
+    {
+      "Identity": "D:\\GITDESKTOP\\PRN221_Store\\HE153620_Store\\HE153620_Store\\wwwroot\\microsoft\\signalr\\dist\\browser\\signalr.min.js",
+      "SourceId": "HE153620_Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GITDESKTOP\\PRN221_Store\\HE153620_Store\\HE153620_Store\\wwwroot\\",
+      "BasePath": "_content/HE153620_Store",
+      "RelativePath": "microsoft/signalr/dist/browser/signalr.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\microsoft\\signalr\\dist\\browser\\signalr.min.js"
     }
   ]
 }

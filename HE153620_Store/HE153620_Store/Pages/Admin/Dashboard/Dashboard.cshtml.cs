@@ -1,4 +1,4 @@
-using HE153620_Store.Models;
+﻿using HE153620_Store.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -62,8 +62,8 @@ namespace HE153620_Store.Pages.Admin.Dashboard
 
         public async Task OnGetAsync()
         {
-            // Calculate total amount sold in the current month
-            // Calculate total amount sold in the current month
+            // Tính tổng số tiền đã bán trong tháng hiện tại
+            // Tính tổng số tiền đã bán trong tháng hiện tại
             var currentDate = DateTime.Now.Date;
             var currentMonth = currentDate.Month;
             var currentYear = currentDate.Year;
@@ -72,12 +72,15 @@ namespace HE153620_Store.Pages.Admin.Dashboard
                 .Where(i => i.InvoiceDate.HasValue && i.InvoiceDate.Value.Month == currentMonth && i.InvoiceDate.Value.Year == currentYear)
                 .SumAsync(i => i.TotalAmount);
 
-            // Find the most sold product
+            // Tìm sản phẩm được bán nhiều nhất
             MostSoldProduct = await _dbContext.Products
                 .OrderByDescending(p => p.OrderDetails.Sum(od => od.Quantity))
                 .FirstOrDefaultAsync();
 
-            // Calculate monthly sales
+
+
+
+            // Tính doanh số hàng tháng
             var monthlySales = await _dbContext.Invoices
                 .GroupBy(i => new { i.InvoiceDate.Value.Month, i.InvoiceDate.Value.Year })
                 .Select(g => new
